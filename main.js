@@ -1,6 +1,6 @@
 const { createApp } = Vue;
 
-createApp({
+const vueapp = createApp({
     data(){
         return{
             text: "押すと文章が変わります",
@@ -11,4 +11,6 @@ createApp({
             this.text = "Hello Vue";
         }
     }
-})
+});
+
+vueapp.mount("#app")
