@@ -3,8 +3,9 @@ const { createApp } = Vue;
 const vueapp = createApp({
     data(){
         return{
-            text: "押すと文章が変わります",
+            text: "Hello Electron",
             flag: true,
+            move: false,
         }
     },
     methods: {
@@ -13,9 +14,20 @@ const vueapp = createApp({
             this.text = "Hello Vue";
             this.flag = !this.flag;
         }else{
-            this.text = "押すと文章が変わります";
+            this.text = "Hello Electron";
             this.flag = !this.flag;
         }
+        },
+        moveBox(){
+            if(!this.move){
+                gsap.to('.box', { x: 200, duration: 1 });
+                this.move = !this.move;
+                console.log('toRight');
+            }else{
+                gsap.to('.box', { x: 0, duration: 1 });
+                this.move = !this.move;
+                console.log('toLeft');
+            }
         }
     }
 });
